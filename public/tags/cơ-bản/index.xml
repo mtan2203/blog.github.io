@@ -1,3 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cơ Bản on Blog Học Lập Trình JavaScript</title><link>https://example.com/tags/c%C6%A1-b%E1%BA%A3n/</link><description>Recent content in Cơ Bản on Blog Học Lập Trình JavaScript</description><generator>Hugo</generator><language>vi</language><lastBuildDate>Mon, 15 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/c%C6%A1-b%E1%BA%A3n/index.xml" rel="self" type="application/rss+xml"/><item><title>Bắt đầu học JavaScript - Những bước đi đầu tiên</title><link>https://example.com/posts/js-experience-1/</link><pubDate>Mon, 15 Sep 2025 00:00:00 +0000</pubDate><guid>https://example.com/posts/js-experience-1/</guid><description>&lt;h2 id="lời-mở-đầu"&gt;Lời mở đầu&lt;/h2&gt;
-&lt;p&gt;Hành trình học JavaScript của mình bắt đầu từ sự tò mò về cách các trang web hoạt động. Sau khi học HTML và CSS, mình nhận ra rằng để làm cho trang web thực sự &amp;ldquo;sống động&amp;rdquo; và tương tác thì cần phải học JavaScript.&lt;/p&gt;
-&lt;p&gt;Khi mới bắt đầu, mình cảm thấy hơi choáng ngợp với lượng kiến thức cần học. Nhưng sau một thời gian, mình đã tìm ra phương pháp học tập hiệu quả cho bản thân.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cơ Bản on Blog Học Lập Trình JavaScript</title>
+    <link>http://localhost:1313/tags/c%C6%A1-b%E1%BA%A3n/</link>
+    <description>Recent content in Cơ Bản on Blog Học Lập Trình JavaScript</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Mon, 15 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/c%C6%A1-b%E1%BA%A3n/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bắt đầu học JavaScript - Những bước đi đầu tiên</title>
+      <link>http://localhost:1313/posts/js-experience-1/</link>
+      <pubDate>Mon, 15 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/js-experience-1/</guid>
+      <description>&lt;h2 id=&#34;lời-mở-đầu&#34;&gt;Lời mở đầu&lt;/h2&gt;&#xA;&lt;p&gt;Hành trình học JavaScript của mình bắt đầu từ sự tò mò về cách các trang web hoạt động. Sau khi học HTML và CSS, mình nhận ra rằng để làm cho trang web thực sự &amp;ldquo;sống động&amp;rdquo; và tương tác thì cần phải học JavaScript.&lt;/p&gt;&#xA;&lt;p&gt;Khi mới bắt đầu, mình cảm thấy hơi choáng ngợp với lượng kiến thức cần học. Nhưng sau một thời gian, mình đã tìm ra phương pháp học tập hiệu quả cho bản thân.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
