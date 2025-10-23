@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vòng Lặp on Blog Học Lập Trình JavaScript</title>
+    <link>http://localhost:1313/tags/v%C3%B2ng-l%E1%BA%B7p/</link>
+    <description>Recent content in Vòng Lặp on Blog Học Lập Trình JavaScript</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Wed, 24 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/v%C3%B2ng-l%E1%BA%B7p/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vòng lặp và tư duy lặp trong JavaScript</title>
+      <link>http://localhost:1313/posts/js-experience-4/</link>
+      <pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/js-experience-4/</guid>
+      <description>&lt;h2 id=&#34;sức-mạnh-của-vòng-lặp&#34;&gt;Sức mạnh của vòng lặp&lt;/h2&gt;&#xA;&lt;p&gt;Vòng lặp (loop) cho phép chúng ta thực hiện một công việc nhiều lần mà không cần viết lại code. Đây là một trong những khái niệm quan trọng nhất trong lập trình.&lt;/p&gt;&#xA;&lt;p&gt;Tưởng tượng bạn cần in ra &amp;ldquo;Hello&amp;rdquo; 100 lần. Thay vì viết 100 dòng &lt;code&gt;console.log()&lt;/code&gt;, bạn chỉ cần một vòng lặp!&lt;/p&gt;&#xA;&lt;h2 id=&#34;các-loại-vòng-lặp-trong-javascript&#34;&gt;Các loại vòng lặp trong JavaScript&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-vòng-lặp-for---phổ-biến-nhất&#34;&gt;1. Vòng lặp for - Phổ biến nhất&lt;/h3&gt;&#xA;&lt;p&gt;Cú pháp cơ bản:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

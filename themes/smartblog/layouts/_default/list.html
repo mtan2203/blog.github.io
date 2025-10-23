@@ -1,0 +1,159 @@
+{{ define "main" }}
+<div class="list-page-fullwidth">
+    <header class="page-header-professional">
+        <div class="wide-container">
+            <div class="header-content">
+                <h1 class="page-title">{{ .Title }}</h1>
+                {{ if .Description }}
+                <p class="page-description">{{ .Description }}</p>
+                {{ else if .Content }}
+                <div class="page-content">{{ .Content }}</div>
+                {{ end }}
+                <div class="page-meta">
+                    <span class="post-count">{{ len .Pages }} Articles</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="posts-section">
+        <div class="wide-container">
+            {{ if .Pages }}
+            <div class="posts-grid-professional">
+                {{ range .Pages }}
+                {{ partial "post-card.html" . }}
+                {{ end }}
+            </div>
+            {{ else }}
+            <div class="empty-state">
+                <div class="empty-content">
+                    <svg width="64" height="64" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path>
+                    </svg>
+                    <h3>No Articles Yet</h3>
+                    <p>Articles in this category are coming soon. Check back for quality content.</p>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </section>
+</div>
+
+<style>
+.list-page-fullwidth {
+    width: 100%;
+    background: #ffffff;
+}
+
+.page-header-professional {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4rem 0;
+    position: relative;
+}
+
+.page-header-professional::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.1"><circle cx="30" cy="30" r="2"/></g></svg>');
+    animation: float 20s ease-in-out infinite;
+}
+
+.wide-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.header-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.page-description {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.page-meta {
+    margin-top: 2rem;
+}
+
+.post-count {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.5rem 1.25rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.posts-section {
+    padding: 6rem 0;
+    background: #f8fafc;
+}
+
+.posts-grid-professional {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+.empty-state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.empty-content {
+    text-align: center;
+    max-width: 400px;
+    color: #4a5568;
+}
+
+.empty-content svg {
+    margin: 0 auto 2rem;
+    opacity: 0.5;
+}
+
+.empty-content h3 {
+    font-size: 1.5rem;
+    color: #2d3748;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .wide-container {
+        padding: 0 1rem;
+    }
+    
+    .posts-grid-professional {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+</style>
+{{ end }}

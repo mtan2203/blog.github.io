@@ -1,0 +1,17 @@
+name = "SmartBlog"
+license = "MIT"
+licenselink = "https://github.com/yourusername/smartblog/blob/master/LICENSE"
+description = "A clean and modern blog theme for Hugo - perfect for personal blogs and learning journals"
+homepage = "https://github.com/yourusername/smartblog"
+tags = ["blog", "clean", "modern", "responsive", "minimal", "personal", "education"]
+features = ["responsive", "blog", "tags", "categories", "seo-optimized", "fast"]
+min_version = "0.60.0"
+
+[author]
+  name = "Your Name"
+  homepage = "https://example.com"
+
+[original]
+  name = "SmartBlog"
+  homepage = "https://example.com"
+  repo = "https://github.com/yourusername/smartblog"

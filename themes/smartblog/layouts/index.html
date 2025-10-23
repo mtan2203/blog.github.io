@@ -1,0 +1,284 @@
+{{ define "main" }}
+<div class="homepage-fullwidth">
+    <!-- Hero Section -->
+    <section class="hero-section-professional">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">JavaScript Development Blog</h1>
+                <p class="hero-subtitle">
+                    In-depth tutorials, best practices, and real-world solutions for modern web development
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">{{ len (where .Site.RegularPages "Type" "posts") }}</span>
+                        <span class="stat-label">Articles</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">4+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Posts Section -->
+    <section class="featured-section">
+        <div class="wide-container">
+            <div class="section-header">
+                <h2>Latest Articles</h2>
+                <p>Insights from the world of JavaScript development</p>
+            </div>
+            
+            <div class="posts-grid-professional">
+                {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
+                {{ if $paginator.Pages }}
+                    {{ range $paginator.Pages }}
+                        {{ partial "post-card.html" . }}
+                    {{ end }}
+                {{ else }}
+                    <div class="no-posts">
+                        <h3>Coming Soon</h3>
+                        <p>New articles are being prepared. Check back soon for quality content on JavaScript development.</p>
+                    </div>
+                {{ end }}
+            </div>
+
+            <!-- Pagination -->
+            {{ if gt $paginator.TotalPages 1 }}
+            <nav class="pagination-professional" role="navigation" aria-label="Pagination">
+                {{ if $paginator.HasPrev }}
+                <a href="{{ $paginator.Prev.URL }}" class="pagination-btn prev" rel="prev">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    Previous
+                </a>
+                {{ end }}
+                
+                <div class="pagination-info">
+                    <span>Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}</span>
+                </div>
+                
+                {{ if $paginator.HasNext }}
+                <a href="{{ $paginator.Next.URL }}" class="pagination-btn next" rel="next">
+                    Next
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+                {{ end }}
+            </nav>
+            {{ end }}
+        </div>
+    </section>
+</div>
+
+<style>
+/* Full-width Homepage Styles */
+.homepage-fullwidth {
+    width: 100%;
+    background: #ffffff;
+}
+
+.hero-section-professional {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section-professional::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.1"><circle cx="30" cy="30" r="2"/></g></svg>');
+    animation: float 20s ease-in-out infinite;
+}
+
+.hero-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.featured-section {
+    padding: 6rem 0;
+    background: #f8fafc;
+}
+
+.wide-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1a202c;
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    font-size: 1.125rem;
+    color: #4a5568;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.posts-grid-professional {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.no-posts {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: white;
+    border-radius: 1rem;
+    border: 2px dashed #cbd5e0;
+}
+
+.no-posts h3 {
+    font-size: 1.5rem;
+    color: #2d3748;
+    margin-bottom: 1rem;
+}
+
+.no-posts p {
+    color: #4a5568;
+    font-size: 1.125rem;
+}
+
+.pagination-professional {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.pagination-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: white;
+    color: #4a5568;
+    text-decoration: none;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.pagination-btn:hover {
+    background: #2b6cb0;
+    color: white;
+    border-color: #2b6cb0;
+    transform: translateY(-2px);
+}
+
+.pagination-info {
+    padding: 1rem 2rem;
+    background: white;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .posts-grid-professional {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .pagination-professional {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .hero-container, .wide-container {
+        padding: 0 1rem;
+    }
+}
+</style>
+{{ end }}

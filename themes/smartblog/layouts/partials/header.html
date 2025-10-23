@@ -1,0 +1,26 @@
+<header class="site-header" role="banner">
+    <div class="container">
+        <div class="logo">
+            <a href="{{ .Site.BaseURL }}" aria-label="Về trang chủ">
+                <div class="logo-icon" aria-hidden="true">✨</div>
+                <h1 class="site-title">{{ .Site.Title }}</h1>
+            </a>
+            {{ with .Site.Params.description }}
+            <p class="site-tagline">{{ . }}</p>
+            {{ end }}
+        </div>
+        
+        <nav class="main-nav" role="navigation" aria-label="Main navigation">
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.main }}
+                <a href="{{ .URL }}" 
+                   {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+                   class="active" aria-current="page"
+                   {{ end }}
+                   {{ if .Pre }}title="{{ .Pre }}"{{ end }}>
+                    {{ .Name }}
+                </a>
+            {{ end }}
+        </nav>
+    </div>
+</header>

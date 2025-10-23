@@ -1,0 +1,70 @@
+baseURL = "https://example.com/"
+languageCode = "vi"
+title = "Blog Học Lập Trình JavaScript"
+theme = "smartblog"
+enableRobotsTXT = true
+enableEmoji = true
+
+# FIX: Thay paginate bằng pagination.pagerSize
+[pagination]
+  pagerSize = 6
+
+[params]
+  description = "Blog cá nhân chia sẻ hành trình và kinh nghiệm học lập trình JavaScript"
+  author = "Sinh viên IT"
+  authorImage = "/images/avatar.jpg"
+  dateFormat = "02/01/2006"
+  mainSections = ["posts"]
+  
+  # Social links
+  [params.social]
+    github = "https://github.com/yourusername"
+    twitter = "https://twitter.com/yourusername"
+    facebook = "https://facebook.com/yourusername"
+    email = "your.email@example.com"
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Trang chủ"
+    url = "/"
+    weight = 1
+  
+  [[menu.main]]
+    identifier = "posts"
+    name = "Bài viết"
+    url = "/posts/"
+    weight = 2
+  
+  [[menu.main]]
+    identifier = "about"
+    name = "Giới thiệu"
+    url = "/about/"
+    weight = 3
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+# FIX: Bỏ JSON khỏi home outputs
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    lineNos = true
+    lineNumbersInTable = true
+    tabWidth = 4
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2

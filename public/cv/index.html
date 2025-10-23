@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    
+    <title>CV - Phan Mạnh Tân | Blog Học Lập Trình JavaScript</title>
+    
+    
+    <meta name="description" content="CV của Phan Mạnh Tân - Full-stack Developer">
+    <meta name="author" content="Sinh viên IT">
+    
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://localhost:1313/cv/">
+    <meta property="og:title" content="CV - Phan Mạnh Tân">
+    <meta property="og:description" content="CV của Phan Mạnh Tân - Full-stack Developer">
+    
+    
+    
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="http://localhost:1313/cv/">
+    <meta property="twitter:title" content="CV - Phan Mạnh Tân">
+    <meta property="twitter:description" content="CV của Phan Mạnh Tân - Full-stack Developer">
+    
+    
+    
+    
+    
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    
+</head>
+<body>
+    <header class="site-header" role="banner">
+    <div class="container">
+        <div class="logo">
+            <a href="http://localhost:1313/" aria-label="Về trang chủ">
+                <div class="logo-icon" aria-hidden="true">✨</div>
+                <h1 class="site-title">Blog Học Lập Trình JavaScript</h1>
+            </a>
+            
+            <p class="site-tagline">Blog cá nhân chia sẻ hành trình và kinh nghiệm học lập trình JavaScript</p>
+            
+        </div>
+        
+        <nav class="main-nav" role="navigation" aria-label="Main navigation">
+            
+            
+                <a href="/" 
+                   
+                   >
+                    Trang chủ
+                </a>
+            
+                <a href="/posts/" 
+                   
+                   >
+                    Bài viết
+                </a>
+            
+                <a href="/about/" 
+                   
+                   >
+                    Giới thiệu
+                </a>
+            
+                <a href="/cv/" 
+                   
+                   >
+                    CV
+                </a>
+            
+        </nav>
+    </div>
+</header>
+
+    <main class="site-content">
+        
+<div class="cv-page">
+    
+    <div class="cv-header">
+        <div class="container">
+            <div class="cv-header-content">
+                <h1>Curriculum Vitae</h1>
+                <div class="cv-actions">
+                    <button onclick="window.print()" class="btn-print">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zM5 14a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
+                        </svg>
+                        In CV
+                    </button>
+                    <button onclick="downloadPDF()" class="btn-download">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                        Tải PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="cv-content" id="cv-printable">
+        <div class="container">
+            <div class="cv-grid">
+                
+                <div class="cv-sidebar">
+                    
+                    <div class="cv-photo">
+                        <img src="/images/1.jpg" alt="Phan Mạnh Tân" class="profile-img">
+                    </div>
+
+                    
+                    <section class="cv-section">
+                        <h3>Thông Tin Liên Hệ</h3>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <strong>Email:</strong>
+                                <span>tanphan2203@gmail.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <strong>Điện thoại:</strong>
+                                <span>+84 xxx xxx xxx</span>
+                            </div>
+                            <div class="contact-item">
+                                <strong>Địa chỉ:</strong>
+                                <span>TP. Hồ Chí Minh, Việt Nam</span>
+                            </div>
+                            <div class="contact-item">
+                                <strong>LinkedIn:</strong>
+                                <span>linkedin.com/in/phanmanhtan</span>
+                            </div>
+                            <div class="contact-item">
+                                <strong>GitHub:</strong>
+                                <span>github.com/tanphan2004</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    
+                    <section class="cv-section">
+                        <h3>Kỹ Năng Chuyên Môn</h3>
+                        
+                        <div class="skill-group">
+                            <h4>Frontend</h4>
+                            <ul class="skill-list">
+                                <li>JavaScript/TypeScript</li>
+                                <li>React.js</li>
+                                <li>HTML5 & CSS3</li>
+                                <li>Responsive Design</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-group">
+                            <h4>Backend</h4>
+                            <ul class="skill-list">
+                                <li>Node.js</li>
+                                <li>Express.js</li>
+                                <li>Python</li>
+                                <li>PHP</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-group">
+                            <h4>Database & Tools</h4>
+                            <ul class="skill-list">
+                                <li>MySQL</li>
+                                <li>MongoDB</li>
+                                <li>Git/GitHub</li>
+                                <li>Docker</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    
+                    <section class="cv-section">
+                        <h3>Ngôn Ngữ</h3>
+                        <div class="language-item">
+                            <span class="lang-name">Tiếng Việt</span>
+                            <span class="lang-level">Bản ngữ</span>
+                        </div>
+                        <div class="language-item">
+                            <span class="lang-name">Tiếng Anh</span>
+                            <span class="lang-level">Trung cấp</span>
+                        </div>
+                    </section>
+                </div>
+
+                
+                <div class="cv-main">
+                    
+                    <section class="cv-section">
+                        <div class="cv-header-info">
+                            <h1 class="cv-name">PHAN MẠNH TÂN</h1>
+                            <h2 class="cv-title">FULL-STACK DEVELOPER</h2>
+                            <p class="cv-summary">
+                                Sinh viên năm 4 chuyên ngành Công nghệ Phần mềm với 4+ năm kinh nghiệm phát triển web. 
+                                Đam mê tạo ra những ứng dụng web hiệu quả và có khả năng mở rộng, với kiến thức vững chắc 
+                                về cả frontend và backend technologies.
+                            </p>
+                        </div>
+                    </section>
+
+                    
+                    <section class="cv-section">
+                        <h3>Học Vấn</h3>
+                        <div class="education-item">
+                            <div class="edu-header">
+                                <h4>Cử nhân Công nghệ Thông tin</h4>
+                                <span class="edu-year">2021 - 2025</span>
+                            </div>
+                            <p class="edu-school">Đại học Công nghệ Thông tin</p>
+                            <p class="edu-major">Chuyên ngành: Công nghệ Phần mềm</p>
+                            <p class="edu-gpa">GPA: 3.5/4.0</p>
+                            <ul class="edu-achievements">
+                                <li>Top 10% sinh viên xuất sắc khoa CNTT</li>
+                                <li>Giải Nhì Cuộc thi Lập trình cấp Khoa (2023)</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    
+                    <section class="cv-section">
+                        <h3>Kinh Nghiệm Làm Việc</h3>
+                        
+                        <div class="experience-item">
+                            <div class="exp-header">
+                                <h4>Freelance Developer</h4>
+                                <span class="exp-year">2022 - Hiện tại</span>
+                            </div>
+                            <p class="exp-company">Tự do</p>
+                            <ul class="exp-responsibilities">
+                                <li>Phát triển các ứng dụng web full-stack cho khách hàng doanh nghiệp</li>
+                                <li>Tối ưu hiệu suất website và cải thiện user experience</li>
+                                <li>Hoàn thành 15+ dự án với đánh giá tích cực từ khách hàng</li>
+                                <li>Tư vấn công nghệ và giải pháp kỹ thuật cho startup</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="exp-header">
+                                <h4>Mentor Lập trình</h4>
+                                <span class="exp-year">2023 - Hiện tại</span>
+                            </div>
+                            <p class="exp-company">Tình nguyện - Trường Đại học</p>
+                            <ul class="exp-responsibilities">
+                                <li>Hướng dẫn sinh viên năm nhất về lập trình cơ bản</li>
+                                <li>Tổ chức các workshop về JavaScript và React.js</li>
+                                <li>Hỗ trợ 20+ sinh viên trong các dự án học tập</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    
+                    <section class="cv-section">
+                        <h3>Dự Án Nổi Bật</h3>
+                        
+                        <div class="project-item">
+                            <h4>Hệ thống Quản lý Thư viện</h4>
+                            <p class="project-tech"><strong>Công nghệ:</strong> React.js, Node.js, Express, MySQL, JWT</p>
+                            <ul class="project-features">
+                                <li>Xây dựng hệ thống quản lý mượn/trả sách real-time</li>
+                                <li>Tích hợp dashboard analytics với Chart.js</li>
+                                <li>Giảm 60% thời gian xử lý công việc thư viện</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-item">
+                            <h4>Blog Platform với Hugo</h4>
+                            <p class="project-tech"><strong>Công nghệ:</strong> Hugo, JavaScript, CSS3, Responsive Design</p>
+                            <ul class="project-features">
+                                <li>Thiết kế giao diện responsive với performance tối ưu</li>
+                                <li>Đạt Google PageSpeed score 95+</li>
+                                <li>SEO-friendly với structured data</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-item">
+                            <h4>E-commerce Dashboard</h4>
+                            <p class="project-tech"><strong>Công nghệ:</strong> React.js, Chart.js, REST API</p>
+                            <ul class="project-features">
+                                <li>Dashboard theo dõi bán hàng real-time</li>
+                                <li>Tính năng báo cáo và phân tích dữ liệu</li>
+                                <li>Cải thiện 40% hiệu quả ra quyết định</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    
+                    <section class="cv-section">
+                        <h3>Chứng Chỉ</h3>
+                        <ul class="certification-list">
+                            <li>JavaScript Algorithms and Data Structures - freeCodeCamp</li>
+                            <li>Responsive Web Design - freeCodeCamp</li>
+                            <li>Git và GitHub Essential Training</li>
+                        </ul>
+                    </section>
+
+                    
+                    <section class="cv-section">
+                        <h3>Sở Thích</h3>
+                        <p>Lập trình, Đọc sách công nghệ, Photography, Gaming, Tham gia cộng đồng developer</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+ 
+.cv-page {
+    background: #f8fafc;
+    min-height: 100vh;
+}
+
+.cv-header {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.cv-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cv-header h1 {
+    font-size: 2rem;
+    color: #1a202c;
+    margin: 0;
+}
+
+.cv-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-print, .btn-download {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-print {
+    background: #e2e8f0;
+    color: #4a5568;
+}
+
+.btn-print:hover {
+    background: #cbd5e0;
+}
+
+.btn-download {
+    background: #2b6cb0;
+    color: white;
+}
+
+.btn-download:hover {
+    background: #2c5282;
+}
+
+.cv-content {
+    padding: 3rem 0;
+}
+
+.cv-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+ 
+.cv-sidebar {
+    background: #2d3748;
+    color: white;
+    padding: 2rem;
+}
+
+.cv-photo {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+}
+
+.cv-section {
+    margin-bottom: 2rem;
+}
+
+.cv-section h3 {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    color: #e2e8f0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #4a5568;
+    padding-bottom: 0.5rem;
+}
+
+.contact-info .contact-item {
+    margin-bottom: 0.75rem;
+    font-size: 0.875rem;
+}
+
+.contact-item strong {
+    display: block;
+    color: #cbd5e0;
+    margin-bottom: 0.25rem;
+}
+
+.skill-group {
+    margin-bottom: 1.5rem;
+}
+
+.skill-group h4 {
+    color: #cbd5e0;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.skill-list {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-list li {
+    padding: 0.25rem 0;
+    font-size: 0.875rem;
+    color: #e2e8f0;
+}
+
+.language-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.lang-level {
+    color: #cbd5e0;
+}
+
+ 
+.cv-main {
+    padding: 2rem;
+}
+
+.cv-header-info {
+    margin-bottom: 2rem;
+    text-align: center;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 2rem;
+}
+
+.cv-name {
+    font-size: 2.5rem;
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.cv-title {
+    font-size: 1.25rem;
+    color: #2b6cb0;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.cv-summary {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a5568;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cv-main .cv-section h3 {
+    font-size: 1.375rem;
+    color: #1a202c;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #2b6cb0;
+    padding-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+ 
+.education-item {
+    margin-bottom: 2rem;
+}
+
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.edu-header h4 {
+    color: #1a202c;
+    font-size: 1.125rem;
+}
+
+.edu-year {
+    color: #2b6cb0;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.edu-school, .edu-major, .edu-gpa {
+    color: #4a5568;
+    margin-bottom: 0.25rem;
+}
+
+.edu-achievements {
+    margin-top: 0.5rem;
+    color: #4a5568;
+}
+
+ 
+.experience-item {
+    margin-bottom: 2rem;
+    border-left: 3px solid #2b6cb0;
+    padding-left: 1rem;
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.exp-header h4 {
+    color: #1a202c;
+    font-size: 1.125rem;
+}
+
+.exp-year {
+    color: #2b6cb0;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.exp-company {
+    color: #4a5568;
+    margin-bottom: 0.75rem;
+    font-style: italic;
+}
+
+.exp-responsibilities {
+    color: #4a5568;
+}
+
+.exp-responsibilities li {
+    margin-bottom: 0.5rem;
+}
+
+ 
+.project-item {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f7fafc;
+    border-radius: 0.5rem;
+    border-left: 4px solid #2b6cb0;
+}
+
+.project-item h4 {
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+}
+
+.project-tech {
+    color: #4a5568;
+    margin-bottom: 0.75rem;
+    font-size: 0.875rem;
+}
+
+.project-features {
+    color: #4a5568;
+}
+
+.project-features li {
+    margin-bottom: 0.25rem;
+}
+
+ 
+.certification-list {
+    color: #4a5568;
+}
+
+.certification-list li {
+    margin-bottom: 0.5rem;
+}
+
+ 
+@media print {
+    .cv-header {
+        display: none;
+    }
+    
+    .cv-page {
+        background: white;
+    }
+    
+    .cv-content {
+        padding: 0;
+    }
+    
+    .cv-grid {
+        box-shadow: none;
+        border-radius: 0;
+    }
+    
+    .cv-sidebar {
+        background: #2d3748 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    .btn-print, .btn-download {
+        display: none;
+    }
+}
+
+ 
+@media (max-width: 768px) {
+    .cv-header-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .cv-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .cv-sidebar {
+        order: 2;
+    }
+    
+    .cv-main {
+        order: 1;
+    }
+    
+    .edu-header, .exp-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+</style>
+
+<script>
+
+function printCV() {
+    window.print();
+}
+
+
+function downloadPDF() {
+    
+    if (typeof html2pdf !== 'undefined') {
+        const element = document.getElementById('cv-printable');
+        const opt = {
+            margin: 1,
+            filename: 'CV_Phan_Manh_Tan.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+        };
+        html2pdf().set(opt).from(element).save();
+    } else {
+        
+        alert('Tính năng tải PDF đang được phát triển. Vui lòng sử dụng chức năng In để lưu thành PDF.');
+        window.print();
+    }
+}
+
+
+if (!document.querySelector('script[src*="html2pdf"]')) {
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js';
+    document.head.appendChild(script);
+}
+</script>
+
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+    <div class="container">
+        <p>&copy; 2025 Blog Học Lập Trình JavaScript. All rights reserved.</p>
+        <p>
+            Được xây dựng với ❤️ bằng 
+            <a href="https://gohugo.io" target="_blank" rel="noopener noreferrer">Hugo</a>
+        </p>
+        
+        
+        <div class="social-links" style="margin-top: 1rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            
+            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                GitHub
+            </a>
+            
+            
+            
+            <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
+                Twitter
+            </a>
+            
+            
+            
+            <a href="https://facebook.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+                Facebook
+            </a>
+            
+            
+            
+            <a href="mailto:your.email@example.com" aria-label="Email">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
+                </svg>
+                Email
+            </a>
+            
+        </div>
+        
+    </div>
+</footer>
+    
+    
+    <script src="/js/main.js"></script>
+    
+    
+</body>
+</html>
