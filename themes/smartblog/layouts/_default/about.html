@@ -28,7 +28,20 @@
             </div>
             <div class="hero-image">
                 <div class="image-container">
-                    <img src="/images/1.jpg" alt="Phan Mạnh Tân - Full-stack Developer" class="profile-image">
+                    <!-- FIX: Multiple fallback options for image loading -->
+                    <img src="{{ .Site.BaseURL }}images/1.jpg" 
+                         alt="Phan Mạnh Tân - Full-stack Developer" 
+                         class="profile-image"
+                         onerror="this.onerror=null; this.src='{{ .Site.BaseURL }}static/images/1.jpg';"
+                         onload="this.style.opacity='1';">
+                    
+                    <!-- Fallback div if image fails to load -->
+                    <div class="image-fallback" style="display: none;">
+                        <div class="avatar-placeholder">
+                            <span>PH</span>
+                        </div>
+                    </div>
+                    
                     <div class="image-overlay">
                         <div class="status-indicator">
                             <span class="status-dot"></span>
@@ -195,108 +208,147 @@
             <!-- Featured Projects -->
             <section id="projects" class="content-section">
                 <h2>Featured Projects</h2>
-                <div class="projects-grid">
+                <div class="projects-container">
                     <div class="project-card">
                         <div class="project-header">
-                            <h3>Library Management System</h3>
-                            <span class="project-status production">Production</span>
+                            <h3>E-commerce Platform</h3>
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                            </div>
                         </div>
                         <p class="project-description">
-                            Comprehensive web application for university library operations featuring real-time book tracking, 
-                            advanced search capabilities, and analytics dashboard for administrative insights.
+                            Full-stack e-commerce solution built with React, Node.js, and MongoDB. 
+                            Features include user authentication, payment integration, and admin dashboard.
                         </p>
                         <div class="project-tech">
-                            <span class="tech-badge">React.js</span>
-                            <span class="tech-badge">Node.js</span>
-                            <span class="tech-badge">MySQL</span>
-                            <span class="tech-badge">JWT Auth</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Express</span>
                         </div>
                         <div class="project-metrics">
                             <div class="metric">
-                                <span class="metric-value">60%</span>
-                                <span class="metric-label">Efficiency Improvement</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">500+</span>
-                                <span class="metric-label">Daily Active Users</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3>Personal Blog Platform</h3>
-                            <span class="project-status active">Active Development</span>
-                        </div>
-                        <p class="project-description">
-                            Modern blog platform built with Hugo framework, featuring responsive design, 
-                            SEO optimization, and performance-focused architecture achieving excellent Core Web Vitals.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-badge">Hugo</span>
-                            <span class="tech-badge">JavaScript</span>
-                            <span class="tech-badge">CSS3</span>
-                            <span class="tech-badge">SEO</span>
-                        </div>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <span class="metric-value">95+</span>
-                                <span class="metric-label">PageSpeed Score</span>
+                                <span class="metric-value">95%</span>
+                                <span class="metric-label">Performance</span>
                             </div>
                             <div class="metric">
                                 <span class="metric-value">100%</span>
-                                <span class="metric-label">Accessibility</span>
+                                <span class="metric-label">Responsive</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="project-card">
                         <div class="project-header">
-                            <h3>E-commerce Analytics Dashboard</h3>
-                            <span class="project-status completed">Completed</span>
+                            <h3>Task Management App</h3>
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                            </div>
                         </div>
                         <p class="project-description">
-                            Real-time analytics dashboard for e-commerce platforms with interactive data visualization, 
-                            sales reporting, and business intelligence features for data-driven decision making.
+                            Collaborative task management application with real-time updates, 
+                            drag-and-drop functionality, and team collaboration features.
                         </p>
                         <div class="project-tech">
-                            <span class="tech-badge">React.js</span>
-                            <span class="tech-badge">Chart.js</span>
-                            <span class="tech-badge">REST API</span>
-                            <span class="tech-badge">MongoDB</span>
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Socket.io</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">TypeScript</span>
                         </div>
                         <div class="project-metrics">
                             <div class="metric">
-                                <span class="metric-value">40%</span>
-                                <span class="metric-label">Decision Speed</span>
+                                <span class="metric-value">Real-time</span>
+                                <span class="metric-label">Updates</span>
                             </div>
                             <div class="metric">
-                                <span class="metric-value">15+</span>
-                                <span class="metric-label">KPI Metrics</span>
+                                <span class="metric-value">5+</span>
+                                <span class="metric-label">Team Size</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Portfolio Website</h3>
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Modern, responsive portfolio website built with Hugo static site generator. 
+                            Features smooth animations, dark mode, and optimized performance.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Hugo</span>
+                            <span class="tech-tag">SCSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">GitHub Pages</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">100</span>
+                                <span class="metric-label">Lighthouse</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">< 1s</span>
+                                <span class="metric-label">Load Time</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Education & Experience -->
-            <section id="education" class="content-section">
-                <h2>Education & Professional Development</h2>
+            <!-- Experience Timeline -->
+            <section id="experience" class="content-section">
+                <h2>Professional Experience</h2>
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <div class="timeline-header">
-                                <h3>Bachelor of Computer Science</h3>
-                                <span class="timeline-date">2021 - 2025</span>
+                                <h3>Frontend Developer Intern</h3>
+                                <span class="timeline-date">Jun 2024 - Present</span>
                             </div>
-                            <p class="timeline-institution">University of Information Technology</p>
-                            <p class="timeline-details">Software Engineering Major • GPA: 3.5/4.0</p>
+                            <p class="timeline-company">Tech Startup - Ho Chi Minh City</p>
                             <ul class="timeline-achievements">
-                                <li>Top 10% academic performance</li>
-                                <li>2nd Place in Faculty Programming Competition</li>
-                                <li>Active member of Computer Science Club</li>
+                                <li>Developed responsive web applications using React.js and TypeScript</li>
+                                <li>Collaborated with design team to implement pixel-perfect UI components</li>
+                                <li>Optimized application performance, achieving 95+ Lighthouse scores</li>
+                                <li>Participated in code reviews and agile development processes</li>
                             </ul>
+                            <div class="timeline-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Styled Components</span>
+                                <span class="tech-tag">Git</span>
+                            </div>
                         </div>
                     </div>
 
@@ -304,16 +356,22 @@
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <div class="timeline-header">
-                                <h3>Freelance Developer</h3>
-                                <span class="timeline-date">2022 - Present</span>
+                                <h3>Freelance Web Developer</h3>
+                                <span class="timeline-date">Jan 2023 - May 2024</span>
                             </div>
-                            <p class="timeline-institution">Independent Contractor</p>
-                            <p class="timeline-details">Full-stack web development and consulting</p>
+                            <p class="timeline-company">Various Clients</p>
                             <ul class="timeline-achievements">
-                                <li>Delivered 15+ successful projects</li>
-                                <li>Maintained 98% client satisfaction rate</li>
-                                <li>Specialized in React.js and Node.js applications</li>
+                                <li>Built custom websites for small businesses and personal brands</li>
+                                <li>Implemented e-commerce solutions with payment gateway integration</li>
+                                <li>Provided maintenance and updates for existing client websites</li>
+                                <li>Managed client relationships and project timelines independently</li>
                             </ul>
+                            <div class="timeline-tech">
+                                <span class="tech-tag">WordPress</span>
+                                <span class="tech-tag">HTML/CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">PHP</span>
+                            </div>
                         </div>
                     </div>
 
@@ -321,17 +379,132 @@
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <div class="timeline-header">
-                                <h3>Programming Mentor</h3>
-                                <span class="timeline-date">2023 - Present</span>
+                                <h3>Computer Science Student</h3>
+                                <span class="timeline-date">Sep 2021 - Present</span>
                             </div>
-                            <p class="timeline-institution">University Volunteer Program</p>
-                            <p class="timeline-details">Teaching and mentoring junior students</p>
+                            <p class="timeline-company">University of Information Technology</p>
                             <ul class="timeline-achievements">
-                                <li>Mentored 20+ students in web development</li>
-                                <li>Conducted workshops on JavaScript and React</li>
-                                <li>Developed curriculum for beginner programming courses</li>
+                                <li>Specialized in Software Engineering with focus on web technologies</li>
+                                <li>Maintained 3.5+ GPA while working on personal projects</li>
+                                <li>Active member of Programming Club and Tech Society</li>
+                                <li>Completed coursework in Data Structures, Algorithms, and Database Design</li>
                             </ul>
+                            <div class="timeline-tech">
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">C++</span>
+                                <span class="tech-tag">SQL</span>
+                            </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section id="education" class="content-section">
+                <h2>Education & Certifications</h2>
+                <div class="education-grid">
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
+                            </svg>
+                        </div>
+                        <div class="education-content">
+                            <h3>Bachelor of Computer Science</h3>
+                            <p class="education-school">University of Information Technology</p>
+                            <p class="education-period">2021 - 2025 (Expected)</p>
+                            <p class="education-gpa">GPA: 3.5/4.0</p>
+                            <p class="education-desc">
+                                Specialized in Software Engineering with coursework in web development, 
+                                database systems, algorithms, and software architecture.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div class="education-content">
+                            <h3>JavaScript Algorithms and Data Structures</h3>
+                            <p class="education-school">freeCodeCamp</p>
+                            <p class="education-period">2023</p>
+                            <p class="education-desc">
+                                Comprehensive certification covering ES6, functional programming, 
+                                algorithms, and data structure implementations in JavaScript.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div class="education-content">
+                            <h3>Responsive Web Design</h3>
+                            <p class="education-school">freeCodeCamp</p>
+                            <p class="education-period">2022</p>
+                            <p class="education-desc">
+                                Certification in modern responsive design techniques, CSS Grid, 
+                                Flexbox, and accessibility best practices.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="content-section">
+                <h2>Let's Connect</h2>
+                <div class="contact-content">
+                    <div class="contact-text">
+                        <p>
+                            I'm always excited to discuss new opportunities, collaborate on interesting projects, 
+                            or simply connect with fellow developers. Feel free to reach out!
+                        </p>
+                        <div class="contact-methods">
+                            <a href="mailto:tanphan2203@gmail.com" class="contact-method">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                                </svg>
+                                tanphan2203@gmail.com
+                            </a>
+                            <a href="#" class="contact-method">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"></path>
+                                </svg>
+                                LinkedIn Profile
+                            </a>
+                            <a href="#" class="contact-method">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                GitHub Portfolio
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary">Send Message</button>
+                        </form>
                     </div>
                 </div>
             </section>
@@ -340,7 +513,7 @@
 </div>
 
 <style>
-/* Reset and Base Styles */
+/* About Page Styles */
 * {
     margin: 0;
     padding: 0;
@@ -348,17 +521,17 @@
 }
 
 .about-page-fullwidth {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
-    color: #2d3748;
-    background: #ffffff;
+    color: #1a202c;
 }
 
 /* Hero Section */
 .hero-section {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 6rem 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
     position: relative;
     overflow: hidden;
 }
@@ -370,52 +543,57 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.1"><circle cx="30" cy="30" r="2"/></g></svg>');
-    animation: float 20s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="50" r="0.5" fill="rgba(255,255,255,0.15)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
 }
 
 .hero-content {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
     display: grid;
-    grid-template-columns: 1fr 400px;
+    grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
     position: relative;
     z-index: 2;
 }
 
+.hero-text {
+    color: white;
+}
+
 .hero-name {
-    font-size: 3.5rem;
-    font-weight: 800;
+    font-size: 4rem;
+    font-weight: 700;
     margin-bottom: 1rem;
-    letter-spacing: -1px;
+    background: linear-gradient(45deg, #fff, #e0e7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInUp 1s ease-out;
 }
 
 .hero-title {
     font-size: 1.5rem;
+    font-weight: 300;
+    color: #e0e7ff;
     margin-bottom: 1.5rem;
-    opacity: 0.9;
-    font-weight: 500;
+    animation: fadeInUp 1s ease-out 0.2s backwards;
 }
 
 .hero-description {
-    font-size: 1.125rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #f1f5f9;
     margin-bottom: 2.5rem;
-    opacity: 0.85;
-    line-height: 1.7;
-    max-width: 500px;
+    animation: fadeInUp 1s ease-out 0.4s backwards;
 }
 
 .hero-actions {
     display: flex;
     gap: 1rem;
+    animation: fadeInUp 1s ease-out 0.6s backwards;
 }
 
 .btn-primary, .btn-secondary {
@@ -423,93 +601,122 @@
     align-items: center;
     gap: 0.75rem;
     padding: 1rem 2rem;
-    border-radius: 0.5rem;
-    font-weight: 600;
+    border-radius: 50px;
     text-decoration: none;
-    transition: all 0.3s ease;
+    font-weight: 600;
     font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
 .btn-primary {
-    background: rgba(255, 255, 255, 0.15);
+    background: linear-gradient(45deg, #4f46e5, #7c3aed);
     color: white;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
 }
 
 .btn-primary:hover {
-    background: rgba(255, 255, 255, 0.25);
     transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(79, 70, 229, 0.4);
 }
 
 .btn-secondary {
     background: transparent;
     color: white;
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .btn-secondary:hover {
     background: rgba(255, 255, 255, 0.1);
-    border-color: white;
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Hero Image */
+.hero-image {
+    display: flex;
+    justify-content: center;
+    animation: fadeInLeft 1s ease-out 0.8s backwards;
 }
 
 .image-container {
     position: relative;
     width: 350px;
     height: 350px;
-    margin: 0 auto;
 }
 
 .profile-image {
     width: 100%;
     height: 100%;
-    border-radius: 1rem;
+    border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
+    border: 6px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease;
+    opacity: 0;
+    /* Fallback background */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .profile-image:hover {
     transform: scale(1.05);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Image Fallback */
+.image-fallback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 6px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.avatar-placeholder {
+    font-size: 4rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .image-overlay {
     position: absolute;
-    bottom: 1rem;
-    left: 1rem;
-    right: 1rem;
+    bottom: -10px;
+    right: -10px;
 }
 
 .status-indicator {
-    background: rgba(255, 255, 255, 0.95);
-    color: #2d3748;
-    padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
+    background: #10b981;
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 25px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 0.875rem;
-    font-weight: 600;
-    backdrop-filter: blur(10px);
+    animation: pulse 2s infinite;
 }
 
 .status-dot {
     width: 8px;
     height: 8px;
-    background: #48bb78;
+    background: #34d399;
     border-radius: 50%;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.5; }
-    100% { opacity: 1; }
+    animation: blink 1.5s infinite;
 }
 
 /* Main Container */
 .main-container {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 4rem 2rem;
     display: grid;
@@ -519,155 +726,140 @@
 
 /* Sidebar */
 .content-sidebar {
+    display: grid;
+    gap: 2rem;
+    height: fit-content;
     position: sticky;
     top: 2rem;
-    height: fit-content;
 }
 
 .content-nav h3,
 .quick-stats h3,
 .contact-sidebar h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #1a202c;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #374151;
     margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 0.5rem;
 }
 
 .content-nav ul {
     list-style: none;
-    margin-bottom: 3rem;
-}
-
-.content-nav li {
-    margin-bottom: 0.5rem;
 }
 
 .content-nav a {
-    color: #4a5568;
-    text-decoration: none;
-    padding: 0.5rem 0;
     display: block;
-    border-left: 3px solid transparent;
-    padding-left: 1rem;
+    padding: 0.75rem 1rem;
+    color: #6b7280;
+    text-decoration: none;
+    border-radius: 8px;
     transition: all 0.3s ease;
+    font-weight: 500;
 }
 
-.content-nav a:hover {
-    color: #2b6cb0;
-    border-left-color: #2b6cb0;
+.content-nav a:hover,
+.content-nav a.active {
+    background: #e0e7ff;
+    color: #4f46e5;
+    transform: translateX(5px);
 }
 
-.quick-stats {
-    margin-bottom: 3rem;
-}
-
+/* Quick Stats */
 .stats-list {
     display: grid;
     gap: 1rem;
 }
 
 .stat-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+    text-align: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .stat-value {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #2b6cb0;
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #4f46e5;
+    margin-bottom: 0.25rem;
 }
 
 .stat-label {
     font-size: 0.875rem;
-    color: #4a5568;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    color: #6b7280;
+    font-weight: 500;
 }
 
+/* Contact Sidebar */
 .contact-list {
     display: grid;
-    gap: 0.75rem;
+    gap: 1rem;
 }
 
 .contact-item {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    color: #4a5568;
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: 8px;
     font-size: 0.875rem;
+    color: #374151;
 }
 
 .contact-item svg {
-    color: #2b6cb0;
+    color: #6b7280;
+    flex-shrink: 0;
 }
 
 /* Main Content */
 .content-main {
-    min-width: 0;
+    display: grid;
+    gap: 4rem;
 }
 
 .content-section {
-    margin-bottom: 4rem;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .content-section h2 {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #1a202c;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e293b;
     margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid #e2e8f0;
+    position: relative;
 }
 
-.overview-content {
-    background: #f7fafc;
-    padding: 2rem;
-    border-radius: 0.75rem;
-    border-left: 4px solid #2b6cb0;
+.content-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(45deg, #4f46e5, #7c3aed);
+    border-radius: 2px;
 }
 
-.overview-content h3 {
-    color: #1a202c;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-}
-
-.overview-content p {
-    margin-bottom: 1rem;
-    color: #4a5568;
-    line-height: 1.7;
-}
-
-.overview-content ul {
-    margin-bottom: 1rem;
-    padding-left: 1.5rem;
-}
-
-.overview-content li {
-    margin-bottom: 0.5rem;
-    color: #4a5568;
-}
-
-/* Skills Section */
+/* Skills Grid */
 .skills-grid {
     display: grid;
-    gap: 2rem;
-}
-
-.skill-category {
-    background: #f7fafc;
-    padding: 2rem;
-    border-radius: 0.75rem;
-    border: 1px solid #e2e8f0;
+    gap: 3rem;
 }
 
 .skill-category h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #1a202c;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #374151;
     margin-bottom: 1.5rem;
 }
 
@@ -678,75 +870,103 @@
 
 .skill-item {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 200px 1fr auto;
     gap: 1rem;
     align-items: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
 .skill-name {
     font-weight: 600;
-    color: #2d3748;
+    color: #374151;
 }
 
 .skill-bar {
-    width: 200px;
     height: 8px;
-    background: #e2e8f0;
+    background: #e5e7eb;
     border-radius: 4px;
     overflow: hidden;
+    position: relative;
 }
 
 .skill-progress {
     height: 100%;
-    background: linear-gradient(90deg, #2b6cb0, #3182ce);
+    background: linear-gradient(45deg, #4f46e5, #7c3aed);
     border-radius: 4px;
-    transition: width 1.5s ease;
+    transition: width 2s ease-in-out;
+    position: relative;
+}
+
+.skill-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 2s infinite;
 }
 
 .skill-level {
     font-size: 0.875rem;
-    color: #4a5568;
+    color: #6b7280;
     font-weight: 500;
 }
 
+/* Technology Tags */
 .technology-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
+    margin-top: 1rem;
 }
 
 .tech-tag {
-    background: #e2e8f0;
-    color: #4a5568;
     padding: 0.5rem 1rem;
-    border-radius: 1.5rem;
+    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+    color: #4338ca;
+    border-radius: 20px;
     font-size: 0.875rem;
     font-weight: 500;
+    border: 1px solid #c7d2fe;
     transition: all 0.3s ease;
 }
 
 .tech-tag:hover {
-    background: #2b6cb0;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
     color: white;
+    transform: translateY(-1px);
 }
 
-/* Projects Section */
-.projects-grid {
+/* Projects Container */
+.projects-container {
     display: grid;
     gap: 2rem;
 }
 
 .project-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 0.75rem;
+    background: white;
+    border-radius: 16px;
     padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
     transition: all 0.3s ease;
 }
 
 .project-card:hover {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transform: translateY(-5px);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 .project-header {
@@ -757,40 +977,35 @@
 }
 
 .project-header h3 {
-    font-size: 1.375rem;
-    font-weight: 700;
-    color: #1a202c;
-    margin: 0;
-}
-
-.project-status {
-    padding: 0.375rem 1rem;
-    border-radius: 1rem;
-    font-size: 0.75rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    color: #1e293b;
 }
 
-.project-status.production {
-    background: #48bb78;
-    color: white;
+.project-links {
+    display: flex;
+    gap: 0.5rem;
 }
 
-.project-status.active {
-    background: #3182ce;
-    color: white;
+.project-link {
+    padding: 0.5rem;
+    background: #f3f4f6;
+    border-radius: 8px;
+    color: #6b7280;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-.project-status.completed {
-    background: #4a5568;
+.project-link:hover {
+    background: #4f46e5;
     color: white;
+    transform: translateY(-1px);
 }
 
 .project-description {
-    color: #4a5568;
+    color: #6b7280;
+    line-height: 1.7;
     margin-bottom: 1.5rem;
-    line-height: 1.6;
 }
 
 .project-tech {
@@ -800,38 +1015,25 @@
     margin-bottom: 1.5rem;
 }
 
-.tech-badge {
-    background: #edf2f7;
-    color: #2d3748;
-    padding: 0.375rem 0.75rem;
-    border-radius: 0.375rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    border: 1px solid #e2e8f0;
-}
-
 .project-metrics {
     display: flex;
     gap: 2rem;
 }
 
 .metric {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+    text-align: center;
 }
 
 .metric-value {
-    font-size: 1.25rem;
+    display: block;
+    font-size: 1.5rem;
     font-weight: 700;
-    color: #2b6cb0;
+    color: #4f46e5;
 }
 
 .metric-label {
-    font-size: 0.75rem;
-    color: #4a5568;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    font-size: 0.875rem;
+    color: #6b7280;
 }
 
 /* Timeline */
@@ -843,35 +1045,37 @@
 .timeline::before {
     content: '';
     position: absolute;
-    left: 15px;
+    left: 1rem;
     top: 0;
     bottom: 0;
     width: 2px;
-    background: #e2e8f0;
+    background: linear-gradient(180deg, #4f46e5 0%, #7c3aed 100%);
 }
 
 .timeline-item {
     position: relative;
     margin-bottom: 3rem;
+    padding-left: 2rem;
 }
 
 .timeline-marker {
     position: absolute;
-    left: -27px;
-    top: 0;
+    left: -2rem;
+    top: 0.5rem;
     width: 12px;
     height: 12px;
-    background: #2b6cb0;
+    background: #4f46e5;
     border-radius: 50%;
-    border: 3px solid #ffffff;
-    box-shadow: 0 0 0 3px #e2e8f0;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px #e0e7ff;
 }
 
 .timeline-content {
-    background: #f7fafc;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    border-left: 4px solid #2b6cb0;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
 }
 
 .timeline-header {
@@ -882,77 +1086,242 @@
 }
 
 .timeline-header h3 {
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: #1a202c;
-    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e293b;
 }
 
 .timeline-date {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #2b6cb0;
-    background: #e6fffa;
     padding: 0.25rem 0.75rem;
-    border-radius: 1rem;
+    background: #e0e7ff;
+    color: #4338ca;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
 }
 
-.timeline-institution {
-    font-weight: 600;
-    color: #2d3748;
-    margin-bottom: 0.5rem;
-}
-
-.timeline-details {
-    color: #4a5568;
+.timeline-company {
+    color: #6b7280;
+    font-weight: 500;
     margin-bottom: 1rem;
-    font-style: italic;
 }
 
 .timeline-achievements {
     list-style: none;
-    padding: 0;
+    margin-bottom: 1.5rem;
 }
 
 .timeline-achievements li {
-    color: #4a5568;
-    margin-bottom: 0.5rem;
-    padding-left: 1.5rem;
     position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #374151;
+    line-height: 1.6;
 }
 
 .timeline-achievements li::before {
-    content: '▸';
+    content: '→';
     position: absolute;
     left: 0;
-    color: #2b6cb0;
+    color: #4f46e5;
     font-weight: bold;
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .hero-content {
-        max-width: 1000px;
-        grid-template-columns: 1fr 300px;
-        gap: 3rem;
+.timeline-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* Education Grid */
+.education-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.education-card {
+    display: flex;
+    gap: 1.5rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.education-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+}
+
+.education-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+
+.education-school {
+    color: #4f46e5;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.education-period,
+.education-gpa {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+}
+
+.education-desc {
+    color: #374151;
+    line-height: 1.6;
+    margin-top: 0.75rem;
+}
+
+/* Contact Content */
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.contact-text p {
+    color: #6b7280;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.contact-methods {
+    display: grid;
+    gap: 1rem;
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    color: #374151;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-method:hover {
+    background: #e0e7ff;
+    color: #4f46e5;
+    transform: translateX(5px);
+}
+
+/* Contact Form */
+.contact-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
     }
-    
-    .main-container {
-        max-width: 1000px;
-        grid-template-columns: 250px 1fr;
-        gap: 3rem;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@media (max-width: 968px) {
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
     .hero-content {
         grid-template-columns: 1fr;
-        text-align: center;
         gap: 2rem;
-    }
-    
-    .hero-name {
-        font-size: 2.5rem;
+        text-align: center;
     }
     
     .main-container {
@@ -962,28 +1331,17 @@
     
     .content-sidebar {
         position: static;
-        order: 2;
-        display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
     }
     
-    .content-main {
-        order: 1;
+    .contact-content {
+        grid-template-columns: 1fr;
     }
 }
 
-@media (max-width: 640px) {
-    .hero-section {
-        padding: 4rem 0;
-    }
-    
-    .hero-content {
-        padding: 0 1rem;
-    }
-    
+@media (max-width: 768px) {
     .hero-name {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
     
     .hero-actions {
@@ -1099,6 +1457,23 @@ a:focus, button:focus {
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    // Image loading handling
+    const profileImage = document.querySelector('.profile-image');
+    const imageFallback = document.querySelector('.image-fallback');
+    
+    if (profileImage) {
+        profileImage.addEventListener('error', function() {
+            this.style.display = 'none';
+            if (imageFallback) {
+                imageFallback.style.display = 'flex';
+            }
+        });
+        
+        profileImage.addEventListener('load', function() {
+            this.style.opacity = '1';
+        });
+    }
+    
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
