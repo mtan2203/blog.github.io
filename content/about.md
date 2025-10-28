@@ -4,7 +4,7 @@ date: 2025-10-18
 draft: false
 layout: "about"
 description: "Tìm hiểu về Phan Mạnh Tân - Lập trình viên Full-stack đam mê công nghệ"
-image: "/images/1.jpg"
+image: "/images/manhtan.jpg"
 ---
 
 <div class="cv-container">
