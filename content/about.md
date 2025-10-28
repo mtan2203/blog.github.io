@@ -64,14 +64,13 @@ image: "/images/1.jpg"
 
 <div class="education-section">
 <div class="education-item">
-<h4 class="cv-subtitle">Đại học Công nghệ Thông tin</h4>
+<h4 class="cv-subtitle">Đại học Công nghệ TP Hồ Chí Minh</h4>
 <div class="cv-meta">2021–2025</div>
 
 <div class="education-details">
 <ul class="cv-list">
 <li>Chuyên ngành: <span class="highlight">Công nghệ Phần mềm</span></li>
-<li>GPA: <span class="highlight">3.5/4.0</span> – Top 10% sinh viên xuất sắc</li>
-<li>Giải Nhì Cuộc thi Lập trình cấp Khoa năm 2023</li>
+<li>GPA: <span class="highlight">2.9/4.0</span> </li>
 </ul>
 </div>
 
